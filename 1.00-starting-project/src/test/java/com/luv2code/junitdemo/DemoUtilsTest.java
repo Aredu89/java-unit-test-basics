@@ -1,7 +1,6 @@
 package com.luv2code.junitdemo;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +11,21 @@ class DemoUtilsTest {
     void beforeEach() {
         demoUtils = new DemoUtils();
         System.out.println("Before Each executed test");
+    };
+
+    @AfterEach
+    void tearDownAfterEach() {
+        System.out.println("Running After each");
+    };
+
+    @BeforeAll
+    static void beforeAllFn() {
+        System.out.println("Before all executed");
+    };
+
+    @AfterAll
+    static void afterAllFn() {
+        System.out.println("After all executed");
     };
 
     @Test
