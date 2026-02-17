@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.Simple.class)
-@TestMethodOrder(MethodOrderer.MethodName.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
     DemoUtils demoUtils;
 
@@ -33,6 +33,7 @@ class DemoUtilsTest {
     };
 
     @Test
+    @Order(1)
     void testEqualsAndNotEquals() {
         System.out.println("Running test: testEqualsAndNotEquals");
 
@@ -52,6 +53,7 @@ class DemoUtilsTest {
     }
 
     @Test
+    @Order(0)
     void testSameAndNotSame() {
         System.out.println("Running test: testSameAndNotSame");
 
