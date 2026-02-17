@@ -94,6 +94,7 @@ class DemoUtilsTest {
          System.out.println("Running test: testThrows");
 
          assertThrows(Exception.class, () -> demoUtils.throwException(-1), "Should throw an exception for negative input");
+         assertDoesNotThrow(() -> demoUtils.throwException(1), "Should not throw an exception for non-negative input");
      }
 
      @Test
